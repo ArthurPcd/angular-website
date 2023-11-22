@@ -19,3 +19,14 @@ h2 {
     margin-top: 10px;
 }
 
+.admin-panel {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.admin-panel h1 {
+    color: #343a40;
+}
+

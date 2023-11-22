@@ -1,0 +1,26 @@
+<div class="admin-panel">
+    <h1>Panel d'Administration</h1>
+    <div class="user-management">
+        <h2>Gestion des Utilisateurs</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <button class="btn btn-danger" ng-click="deleteUser(user.id)">Supprimer</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
