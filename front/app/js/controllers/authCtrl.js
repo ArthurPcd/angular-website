@@ -7,7 +7,7 @@ app.controller('authCtrl', function($scope, $location) {
         if (($scope.login.email === 'arthur.pacaud@epitech.eu' || $scope.login.email === 'joan.thomas@epitech.eu') && $scope.login.password === '12345678') {
             $scope.isAdmin = true;
             $location.path('/admin');
-            alert('Connexion réussie ! Bienvenue sur le panel d\'administration !' + $scope.login.email);
+            alert('Connexion réussie ! Bienvenue sur le panel d\'administration !\nVotre mail de connexion est : ' + $scope.login.email + '\nVotre mot de passe par défaut est : ' + $scope.login.password + '\nVous pouvez changer votre mot de passe dans la section "Mon compte".');
         } else {
             $scope.isAdmin = false;
             alert('Échec de la connexion. Vérifiez vos identifiants.');

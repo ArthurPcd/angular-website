@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "http-server . -a 0.0.0.0 -p 8080 -c-1"
+    "start": "http-server . -a 0.0.0.0 -p 8081 -c-1"
   },
   "keywords": [],
   "author": "",

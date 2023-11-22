@@ -6,16 +6,25 @@
             <thead>
             <tr>
                 <th>ID</th>
+                <th>Prénom</th>
                 <th>Nom</th>
                 <th>Email</th>
+                <th>Admin</th>
+                <th>Token</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
+            <tr ng-if="!users.length">
+                <td colspan="7">Aucun utilisateur</td>
+            </tr>
             <tr ng-repeat="user in users">
                 <td>{{ user.id }}</td>
-                <td>{{ user.name }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
                 <td>{{ user.email }}</td>
+                <td>{{ user.isAdmin ? 'Oui' : 'Non' }}</td>
+                <td>{{ user.token }}</td>
                 <td>
                     <button class="btn btn-danger" ng-click="deleteUser(user.id)">Supprimer</button>
                 </td>
