@@ -1,8 +1,29 @@
-<div style="max-width: 500px; margin: auto; padding: 20px; border-radius: 8px;">
-    <h1 style="font-size: 30px; margin-bottom: 20px; text-align: center; font-weight: bold; margin-top: 80px;">Login</h1>
-    <form (ngSubmit)="handleLogin()">
-        <input type="email" id="email" name="email" [(ngModel)]="formData.email" placeholder="Email" required class="inputStyle">
-        <input type="password" id="password" name="password" [(ngModel)]="formData.password" placeholder="Password" required class="inputStyle">
-        <button type="submit" class="buttonStyle">Login</button>
-    </form>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="text-center font-weight-bold mb-4">Login</h1>
+                    <form (ngSubmit)="handleLogin()">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" [(ngModel)]="formData.email" placeholder="Email" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-group">
+                                <input type="{{ showPassword ? 'text' : 'password' }}" #passwordInput id="password" name="password" [(ngModel)]="formData.password" placeholder="Password" required class="form-control">
+                                <div class="input-group-append">
+                  <span class="input-group-text" (click)="togglePassword()">
+                    <i class="fa" [ngClass]="{'fa-eye': showPassword, 'fa-eye-slash': !showPassword}"></i>
+                  </span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
