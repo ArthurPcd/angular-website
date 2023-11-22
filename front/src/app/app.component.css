@@ -1,0 +1,76 @@
+/* styles.css (ou votre fichier de style principal) */
+
+/* Style de base pour la barre de navigation */
+.navbar {
+    background-color: #3498db;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style du logo */
+.navbar-brand {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+/* Style pour le bouton de bascule (toggle) */
+.navbar-toggler {
+    border-color: #fff;
+}
+
+/* Style pour le texte du bouton de bascule */
+.navbar-toggler-icon {
+    background-color: #fff;
+}
+
+/* Style pour les liens de navigation */
+.navbar-nav .nav-link {
+    color: #fff;
+    margin-right: 20px;
+    transition: color 0.3s;
+}
+
+/* Changement de couleur au survol des liens */
+.navbar-nav .nav-link:hover {
+    color: #ecf0f1;
+}
+
+/* Style pour le menu déroulant */
+.navbar-nav .dropdown-menu {
+    background-color: #3498db;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour les éléments du menu déroulant */
+.navbar-nav .dropdown-item {
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+/* Changement de couleur au survol des éléments du menu déroulant */
+.navbar-nav .dropdown-item:hover {
+    background-color: #2980b9;
+}
+
+/* Style pour le contenu principal */
+.main {
+    padding: 20px; /* Espace autour du contenu principal */
+}
+
+/* Style pour le container */
+.container {
+    max-width: 1140px; /* Largeur maximale du container */
+    margin: 0 auto; /* Centrer le container */
+}
+
+/* Styles pour la réactivité sur les écrans plus petits */
+@media (max-width: 768px) {
+    .navbar-nav {
+        margin-top: 10px;
+    }
+
+    .navbar-toggler {
+        margin-right: 10px;
+    }
+}
