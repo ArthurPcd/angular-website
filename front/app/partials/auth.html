@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-md-6">
+        <h2>Login</h2>
+        <form ng-submit="submitLogin()">
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" class="form-control" id="loginEmail" ng-model="login.email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" class="form-control" id="loginPassword" ng-model="login.password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h2>Register</h2>
+        <form ng-submit="submitRegister()">
+            <div class="form-group">
+                <label for="registerFirstName">First Name</label>
+                <input type="text" class="form-control" id="registerFirstName" ng-model="register.firstName" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label for="registerLastName">Last Name</label>
+                <input type="text" class="form-control" id="registerLastName" ng-model="register.lastName" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="registerEmail">Email</label>
+                <input type="email" class="form-control" id="registerEmail" ng-model="register.email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="registerDob">Date of Birth</label>
+                <input type="date" class="form-control" id="registerDob" ng-model="register.dob">
+            </div>
+            <button type="submit" class="btn btn-success">Register</button>
+        </form>
+    </div>
+</div>
