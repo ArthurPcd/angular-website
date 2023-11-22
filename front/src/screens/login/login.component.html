@@ -1,0 +1,8 @@
+<div style="max-width: 500px; margin: auto; padding: 20px; border-radius: 8px;">
+    <h1 style="font-size: 30px; margin-bottom: 20px; text-align: center; font-weight: bold; margin-top: 80px;">Login</h1>
+    <form (ngSubmit)="handleLogin()">
+        <input type="email" id="email" name="email" [(ngModel)]="formData.email" placeholder="Email" required class="inputStyle">
+        <input type="password" id="password" name="password" [(ngModel)]="formData.password" placeholder="Password" required class="inputStyle">
+        <button type="submit" class="buttonStyle">Login</button>
+    </form>
+</div>
