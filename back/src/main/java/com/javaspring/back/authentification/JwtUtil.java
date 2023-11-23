@@ -2,7 +2,9 @@ package com.javaspring.back.authentification;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.stereotype.Component;
 
+@Component
 public class JwtUtil {
 
     private static final String SECRET_KEY = "TaegT2cHcxbl0XLlyV3DQUiyJfpbeM3FBHbrGUJwC6FGjWXFti1fywYZ4Tsdss8r";
@@ -14,5 +16,4 @@ public class JwtUtil {
                 .compact();
     }
 
-    // Ajoutez d'autres méthodes si nécessaire
 }

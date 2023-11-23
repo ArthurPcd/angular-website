@@ -14,7 +14,7 @@ public class MongoConfig {
 
     @Bean
     public MongoClient mongoClient() {
-        return MongoClients.create();
+        return MongoClients.create("mongodb+srv://JoeServices:YRsr33_Yy7wjZ7d@angular-website-databas.vwygeek.mongodb.net/?retryWrites=true&w=majority");
     }
 
     @Bean

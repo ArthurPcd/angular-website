@@ -2,6 +2,7 @@
 /home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/MongoConfig.java
 /home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/AuthController.java
 /home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/AuthService.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/SecurityConfig.java
 /home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/AuthUserDetails.java
 /home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/controller/LoginRequest.java
 /home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/UserRepository.java

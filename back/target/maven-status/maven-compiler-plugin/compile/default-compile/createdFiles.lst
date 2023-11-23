@@ -1,3 +1,4 @@
+com/javaspring/back/authentification/SecurityConfig.class
 com/javaspring/back/App.class
 com/javaspring/back/authentification/UserService.class
 com/javaspring/back/authentification/AuthUserDetails.class
