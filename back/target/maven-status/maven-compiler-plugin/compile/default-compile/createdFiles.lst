@@ -3,8 +3,8 @@ com/javaspring/back/authentification/UserService.class
 com/javaspring/back/authentification/AuthUserDetails.class
 com/javaspring/back/authentification/UserRepository.class
 com/javaspring/back/controller/LoginRequest.class
-com/javaspring/back/controller/AuthController.class
 com/javaspring/back/authentification/User.class
+com/javaspring/back/authentification/AuthController.class
 com/javaspring/back/controller/HomeController.class
 com/javaspring/back/authentification/JwtUtil.class
 com/javaspring/back/authentification/Credentials.class
