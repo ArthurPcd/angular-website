@@ -1,4 +1,4 @@
-var app = angular.module('front', ['ngRoute']);
+var app = angular.module('front', ['ngRoute', 'ngCookies']);
 app.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
