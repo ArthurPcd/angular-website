@@ -1,0 +1,14 @@
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/controller/ApiController.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/MongoConfig.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/EncryptionConfig.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/AuthController.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/AuthService.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/AuthUserDetails.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/UserRepository.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/controller/HomeController.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/JwtUtil.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/App.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/UserService.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/controller/SecurityConfig.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/User.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/Credentials.java
