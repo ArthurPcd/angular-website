@@ -4,9 +4,13 @@ app.controller('authCtrl', function($scope, $location, $http) {
     $scope.isAdmin = false;
 
     $scope.submitLogin = function() {
-        $http.post('http://localhost:8080/api/auth/login', {email: $scope.login.email, password: $scope.login.password})
+        $http.post('http://localhost:8080/api/auth/login', {email: $scope.login.email, password: $scope.login.password}, {
+          transformResponse: [function (data) {
+            return data;
+          }]
+        })
           .then(function(response) {
-              const message = response.data;
+              const token = response.data;
               $location.path('/admin');
               alert('Connexion réussie ! Bienvenue sur le panel d\'administration !');
           })

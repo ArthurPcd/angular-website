@@ -22,7 +22,7 @@ public class AuthController {
     public ResponseEntity<String> login(@RequestBody Credentials credentials) {
         try {
             String token = authService.login(credentials);
-            return ResponseEntity.ok("Login réussi. Token : " + token);
+            return ResponseEntity.ok(token);
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(401).body("Invalid credentials");
