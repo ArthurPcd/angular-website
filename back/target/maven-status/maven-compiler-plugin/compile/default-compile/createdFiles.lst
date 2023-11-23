@@ -7,6 +7,7 @@ com/javaspring/back/authentification/User.class
 com/javaspring/back/authentification/AuthController.class
 com/javaspring/back/controller/HomeController.class
 com/javaspring/back/controller/SecurityConfig.class
+com/javaspring/back/CorsConfig.class
 com/javaspring/back/authentification/JwtUtil.class
 com/javaspring/back/authentification/Credentials.class
 com/javaspring/back/authentification/AuthService.class

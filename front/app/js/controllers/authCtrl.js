@@ -1,17 +1,19 @@
-app.controller('authCtrl', function($scope, $location) {
+app.controller('authCtrl', function($scope, $location, $http) {
     $scope.login = {};
     $scope.register = {};
     $scope.isAdmin = false;
 
     $scope.submitLogin = function() {
-        if (($scope.login.email === 'arthur.pacaud@epitech.eu' || $scope.login.email === 'joan.thomas@epitech.eu') && $scope.login.password === '12345678') {
-            $scope.isAdmin = true;
-            $location.path('/admin');
-            alert('Connexion réussie ! Bienvenue sur le panel d\'administration !\nVotre mail de connexion est : ' + $scope.login.email + '\nVotre mot de passe par défaut est : ' + $scope.login.password + '\nVous pouvez changer votre mot de passe dans la section "Mon compte".');
-        } else {
-            $scope.isAdmin = false;
-            alert('Échec de la connexion. Vérifiez vos identifiants.');
-        }
+        $http.post('http://localhost:8080/api/auth/login', {email: $scope.login.email, password: $scope.login.password})
+          .then(function(response) {
+              const message = response.data;
+              $location.path('/admin');
+              alert('Connexion réussie ! Bienvenue sur le panel d\'administration !');
+          })
+          .catch(function(error) {
+              console.error('Error logging in:', error);
+              alert('Échec de la connexion. Vérifiez vos identifiants.');
+          });
     };
 
     $scope.capitalizeFirstLetter = function(string) {

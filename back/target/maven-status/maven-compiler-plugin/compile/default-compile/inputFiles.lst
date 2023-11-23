@@ -11,4 +11,5 @@
 /home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/UserService.java
 /home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/controller/SecurityConfig.java
 /home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/User.java
+/home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/CorsConfig.java
 /home/joan/web_projects/angular-website/back/src/main/java/com/javaspring/back/authentification/Credentials.java
