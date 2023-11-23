@@ -43,10 +43,9 @@ public class AuthService implements UserDetailsService {
 
     public String login(Credentials credentials) {
         User user = userService.retrieveUser(credentials.getEmail());
-        if (!isValidCredentials(credentials) || !isPasswordValid(credentials.getPassword(), user.getPassword())) {
+        if (!isPasswordValid(credentials.getPassword(), user.getPassword())) {
             throw new RuntimeException("Invalid credentials");
         }
-
         return jwtUtil.generateToken(credentials.getEmail());
     }
 

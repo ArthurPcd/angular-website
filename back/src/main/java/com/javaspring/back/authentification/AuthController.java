@@ -24,6 +24,7 @@ public class AuthController {
             String token = authService.login(credentials);
             return ResponseEntity.ok("Login réussi. Token : " + token);
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity.status(401).body("Invalid credentials");
         }
     }
