@@ -11,9 +11,11 @@
 
     <div class="create-user-form mb-4" ng-show="newUser">
         <h2>Créer un nouvel utilisateur</h2>
-        <input class="form-control mb-2" ng-model="newUser.firstName" placeholder="Prénom" type="text">
-        <input class="form-control mb-2" ng-model="newUser.lastName" placeholder="Nom" type="text">
-        <input class="form-control mb-2" ng-model="newUser.email" placeholder="Email" type="email">
+        <input class="form-control" ng-model="newUser.id" placeholder="id" type="number">
+        <input class="form-control" ng-model="newUser.firstName" placeholder="Prénom" type="text">
+        <input class="form-control" ng-model="newUser.lastName" placeholder="Nom" type="text">
+        <input class="form-control" ng-model="newUser.email" placeholder="Email" type="email">
+        <input class="form-control" ng-model="newUser.token" placeholder="token" type="text">
         <div class="form-check mb-3">
             <input class="form-check-input" ng-model="newUser.isAdmin" type="checkbox">
             <label class="form-check-label">Admin</label>
@@ -23,9 +25,11 @@
 
     <div class="edit-user-form mb-4" ng-show="editingUser">
         <h2>Modifier un utilisateur</h2>
+        <input class="form-control" ng-model="editingUser.id" placeholder="id" type="number">
         <input class="form-control" ng-model="editingUser.firstName" placeholder="Prénom" type="text">
         <input class="form-control" ng-model="editingUser.lastName" placeholder="Nom" type="text">
         <input class="form-control" ng-model="editingUser.email" placeholder="Email" type="email">
+        <input class="form-control" ng-model="editingUser.token" placeholder="token" type="text">
         <input ng-model="editingUser.isAdmin" type="checkbox"> Admin
         <button class="btn btn-success" ng-click="updateUser(editingUser)">Modifier</button>
     </div>

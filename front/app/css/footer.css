@@ -81,7 +81,7 @@
     text-align: center;
 }
 
-.support__block {
+.support_block {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,6 +94,45 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contact_block
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.map-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.map-dim {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.map {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 20px;
 }
