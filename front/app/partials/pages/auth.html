@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<div class="auth-section">
+    <div class="auth-container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Login</h2>
+                <form ng-submit="submitLogin()" class="auth-form">
+                    <div class="form-group">
+                        <label for="loginEmail">Email (default : arthur.pacaud@epitech.eu /
+                            joan.thomas@epitech.eu)</label>
+                        <input class="form-control" id="loginEmail" ng-model="login.email" placeholder="Enter email"
+                               type="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password (default : 12345678)</label>
+                        <input class="form-control" id="loginPassword" ng-model="login.password" placeholder="Password"
+                               type="password">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h2>Register</h2>
+                <form ng-submit="submitRegister()" class="auth-form">
+                    <div class="form-group">
+                        <label for="registerFirstName">First Name</label>
+                        <input class="form-control" id="registerFirstName" ng-model="register.firstName"
+                               placeholder="First Name"
+                               type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerLastName">Last Name</label>
+                        <input class="form-control" id="registerLastName" ng-model="register.lastName"
+                               placeholder="Last Name"
+                               type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input class="form-control" id="registerEmail" ng-model="register.email" placeholder="Email"
+                               type="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerDob">Date of Birth</label>
+                        <input class="form-control" id="registerDob" ng-model="register.dob" type="date">
+                    </div>
+                    <button class="btn btn-success" type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

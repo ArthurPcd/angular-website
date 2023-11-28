@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html ng-app="front">
 <head>
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-route/angular-route.min.js"></script>
     <script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
-    <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="app/css/styles.css">
+    <link rel="stylesheet" href="app/css/about.css">
+    <link rel="stylesheet" href="app/css/support.css">
+    <link rel="stylesheet" href="app/css/admin.css">
+    <link rel="stylesheet" href="app/css/footer.css">
+    <link rel="stylesheet" href="app/css/auth.css">
     <script src="app/js/app.js"></script>
     <script src="app/js/controllers/mainCtrl.js"></script>
     <script src="app/js/controllers/aboutCtrl.js"></script>
@@ -16,13 +24,12 @@
     <script src="app/js/controllers/authCtrl.js"></script>
     <script src="app/js/directives/headerComponent.js"></script>
     <script src="app/js/directives/footerComponent.js"></script>
-    <script src="app/js/directives/editUserComponent.js"></script>
 </head>
 <body>
 <header>
     <header-component></header-component>
 </header>
-<div class="container mt-4">
+<div class="mt-4">
     <div ng-view></div>
 </div>
 <footer>

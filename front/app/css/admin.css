@@ -1,0 +1,40 @@
+.admin-panel {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.admin-panel h1, .admin-panel h2 {
+    color: #343a40;
+}
+
+.create-user-form, .edit-user-form, .user-management, .recent-logins, .user-activity-chart, .activity-chart {
+    background-color: #eef2f7;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.table-hover tbody tr:hover{
+    background-color: #e9ecef;
+}
+
+.table-hover tbody tr td {
+    vertical-align: middle;
+}
+
+.fa-trash, .fa-pencil-alt {
+    cursor: pointer;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.user-token {
+    font-family: monospace;
+    font-style: oblique;
+}

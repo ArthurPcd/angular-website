@@ -5,74 +5,16 @@
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: #343a40;
+    margin: 0;
 }
 
-/* Styles du Footer */
-.footer {
-    background-color: #f8f9fa;
-    border-top: 1px solid #e7e7e7;
-    padding: 20px 0;
-    text-align: start;
-}
-
-.footer h3 {
-    margin-bottom: 15px;
-}
-
-.footer ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.footer ul li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.footer ul li i.contact-icon {
-    margin-right: 5px;
-}
-
-.footer ul li a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.footer .contact-icon {
-    margin-right: 5px;
-}
-
-.footer form {
-    display: flex;
-    gap: 10px;
-}
-
-.footer form input[type="email"] {
-    flex-grow: 1;
-    padding: 5px;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-}
-
-.footer form button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 0.25rem;
-    padding: 5px 10px;
-}
-
-.footer .copyright {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.8em;
-}
-
-@media (max-width: 768px) {
-    .footer .row > div {
-        margin-bottom: 15px;
-    }
+.container {
+    width: 80%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
 }
 
 /* Styles pour la barre de navigation */
@@ -88,124 +30,4 @@
 /* Styles pour les titres h2 */
 h2 {
     margin-bottom: 20px;
-}
-
-/* Styles pour le panneau d'administration */
-.admin-panel {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.admin-panel h1 {
-    color: #343a40;
-    font-weight: bold;
-}
-
-.admin-nav .btn {
-    margin-right: 10px;
-}
-
-.admin-nav .badge {
-    margin-right: 10px;
-    font-size: 16px;
-    padding: 8px 15px;
-    border-radius: 20px;
-}
-
-/* Styles pour les formulaires de création et d'édition d'utilisateurs */
-.create-user-form, .edit-user-form {
-    background-color: #eef2f7;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-}
-
-.create-user-form h2, .edit-user-form h2 {
-    margin-bottom: 15px;
-}
-
-/* Styles pour la gestion des utilisateurs */
-.user-management table {
-    width: 100%;
-}
-
-.user-management th, .user-management td {
-    text-align: center;
-    vertical-align: middle;
-}
-
-.table-responsive {
-    margin-top: 20px;
-    overflow-y: auto;
-    max-height: 400px;
-}
-
-.table-hover tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
-.table thead {
-    background-color: #343a40;
-    color: #fff;
-}
-
-.user-management .btn {
-    margin-right: 5px;
-    font-size: 18px;
-    padding: 8px 12px;
-}
-
-.fa-trash, .fa-pencil-alt {
-    margin-right: 5px;
-}
-
-.admin-pagination {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.pagination li {
-    display: inline;
-    margin: 0 5px;
-}
-
-.pagination li.active a {
-    background-color: #343a40;
-    color: #fff;
-    border-color: #343a40;
-}
-
-.user-detail-modal {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.admin-stats {
-    background-color: #fff;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.user-search input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.user-activity, .recent-logins, .user-activity-chart, .user-roles-management, .admin-alerts, .token-management, .admin-settings {
-    background-color: #fff;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

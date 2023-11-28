@@ -1,4 +1,4 @@
-app.controller('adminCtrl', function ($scope) {
+app.controller('adminCtrl', function ($scope, $http, $timeout) {
 
     $scope.users = [{
         id: 0, firstName: 'Admin', lastName: 'JoPak', email: 'admin.jopak@epitech.eu', isAdmin: true, token: 'token000'
@@ -32,6 +32,10 @@ app.controller('adminCtrl', function ($scope) {
     $scope.currentPage = 1;
     $scope.pageSize = 10;
 
+
+    $scope.newUser = {
+        id: null, firstName: null, lastName: null, email: null, isAdmin: false, token: null
+    }
     $scope.editingUser = null;
     $scope.selectedUser = null;
 
@@ -84,11 +88,11 @@ app.controller('adminCtrl', function ($scope) {
     };
 
 
-    $scope.editUser = function(user) {
+    $scope.editUser = function (user) {
         $scope.editingUser = user;
     };
 
-    $scope.updateUser = function(user) {
+    $scope.updateUser = function (user) {
         let index = $scope.users.findIndex(u => u.id === user.id);
         if (index !== -1) {
             $scope.users[index] = user;
@@ -99,11 +103,6 @@ app.controller('adminCtrl', function ($scope) {
     $scope.getUser = function (userId) {
         return $scope.users.find(user => user.id === userId);
     };
-
-    $scope.getUserInfos = function (userId) {
-        let user = $scope.getUser(userId);
-        return user.firstName + ' - ' + user.lastName + ' - ' + user.email + ' - ' + user.token + ' - Is admin : ' + user.isAdmin;
-    }
 
     $scope.getLogDate = function (userId) {
         date = new Date();
@@ -128,4 +127,76 @@ app.controller('adminCtrl', function ($scope) {
     $scope.getAdminsCount = function () {
         return $scope.users.filter(user => user.isAdmin).length;
     };
+
+    $scope.initOrUpdateUserActivityChart = function () {
+        const data = {
+            labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'],
+            datasets: [{
+                label: 'Activité des utilisateurs',
+                data: [50, 45, 40, 55, 62],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {}
+        };
+
+        if ($scope.userActivityChart) {
+            $scope.userActivityChart.destroy();
+        }
+
+        const ctx = document.getElementById('userActivityChart').getContext('2d');
+        $scope.userActivityChart = new Chart(ctx, config);
+    };
+
+    $scope.initOrUpdateActivityChart = function () {
+        const data = {
+            labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'],
+            datasets: [{
+                label: 'Activité des utilisateurs',
+                data: [50, 45, 40, 55, 62],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            },
+                {
+                    label: 'Activité des administrateurs',
+                    data: [90, 86, 85, 101, 99],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255,99,132,1)',
+                    borderWidth: 1
+                }
+            ]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                }
+            }
+        };
+
+        if ($scope.activityChart) {
+            $scope.activityChart.destroy();
+        }
+
+        const ctx = document.getElementById('activityChart').getContext('2d');
+        $scope.activityChart = new Chart(ctx, config);
+    };
+
+    $timeout(function () {
+        $scope.initOrUpdateUserActivityChart();
+        $scope.initOrUpdateActivityChart();
+    }, 0);
 });

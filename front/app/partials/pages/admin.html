@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html ng-app="front">
+<body>
+<div class="admin-panel mt-5" ng-controller="adminCtrl">
+    <h1 class="text-center mb-4">Panel d'Administration</h1>
+
+    <div class="admin-nav d-flex justify-content-center mt-4 mb-4">
+        <button class="btn btn-info me-2" ng-click="showAllUsers()">Afficher tous les utilisateurs</button>
+        <button class="btn btn-success" ng-click="createUser()">Créer Utilisateur</button>
+    </div>
+
+    <div class="create-user-form mb-4" ng-show="newUser">
+        <h2>Créer un nouvel utilisateur</h2>
+        <input class="form-control mb-2" ng-model="newUser.firstName" placeholder="Prénom" type="text">
+        <input class="form-control mb-2" ng-model="newUser.lastName" placeholder="Nom" type="text">
+        <input class="form-control mb-2" ng-model="newUser.email" placeholder="Email" type="email">
+        <div class="form-check mb-3">
+            <input class="form-check-input" ng-model="newUser.isAdmin" type="checkbox">
+            <label class="form-check-label">Admin</label>
+        </div>
+        <button class="btn btn-primary" ng-click="createUser(newUser)">Ajouter</button>
+    </div>
+
+    <div class="edit-user-form mb-4" ng-show="editingUser">
+        <h2>Modifier un utilisateur</h2>
+        <input class="form-control" ng-model="editingUser.firstName" placeholder="Prénom" type="text">
+        <input class="form-control" ng-model="editingUser.lastName" placeholder="Nom" type="text">
+        <input class="form-control" ng-model="editingUser.email" placeholder="Email" type="email">
+        <input ng-model="editingUser.isAdmin" type="checkbox"> Admin
+        <button class="btn btn-success" ng-click="updateUser(editingUser)">Modifier</button>
+    </div>
+
+    <div class="user-management">
+        <h2>Gestion des Utilisateurs</h2>
+        <p>Nombre total d'utilisateurs : {{ getUsersCount() }}</p>
+        <p>Nombre d'admins : {{ getAdminsCount() }}</p>
+
+        <table class="table table-striped table-hover mt-3">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Admin</th>
+                <th>Token</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.isAdmin ? 'Oui' : 'Non' }}</td>
+                <td class="user-token">{{ user.token }}</td>
+                <td>
+                    <button class="btn btn-danger" ng-click="deleteUser(user.id)"><i class="fa fa-trash"></i></button>
+                    <button class="btn btn-primary" ng-click="editUser(user)"><i class="fa fa-pencil-alt"></i></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="recent-logins">
+        <h2>Recent Logins</h2>
+        <table class="table table-striped table-hover mt-3">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Admin</th>
+                <th>Token</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.isAdmin ? 'Oui' : 'Non' }}</td>
+                <td class="user-token">{{ user.token }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="activity-chart">
+        <h2>Activité Globale</h2>
+        <canvas height="200" id="activityChart" width="400"></canvas>
+    </div>
+
+    <div class="user-activity-chart">
+        <h2>Activité des Utilisateurs</h2>
+        <canvas height="200" id="userActivityChart" width="400"></canvas>
+    </div>
+</div>
+</body>
+</html>
