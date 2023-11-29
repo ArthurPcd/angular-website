@@ -140,7 +140,10 @@
 .icon {
     fill: #007bff;
     display: inline-block;
+    padding: 45px 0;
     height: 60px;
     width: 60px;
-    margin-bottom: 20px;
+    font-size: 3.5em;
+    line-height: 0.04167em;
+    vertical-align: -0.125em;
 }
