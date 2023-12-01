@@ -1,4 +1,3 @@
-/* Styles Généraux */
 .body-adjusted {
     position: fixed;
     width: 100%;
@@ -17,17 +16,14 @@
     margin: auto;
 }
 
-/* Styles pour la barre de navigation */
 .navbar-brand {
     font-weight: bold;
 }
 
-/* Styles pour les groupes de formulaires */
 .form-group {
     margin-bottom: 15px;
 }
 
-/* Styles pour les titres h2 */
 h2 {
     margin-bottom: 20px;
 }

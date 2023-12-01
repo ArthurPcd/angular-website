@@ -13,6 +13,9 @@ app.config(function ($routeProvider) {
         .when('/admin', {
             templateUrl: 'app/partials/pages/admin.html', controller: 'adminCtrl'
         })
+        .when('/invoice', {
+            templateUrl: 'app/partials/pages/invoice.html', controller: 'invoiceCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         });

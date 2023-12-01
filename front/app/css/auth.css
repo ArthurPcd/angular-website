@@ -12,12 +12,10 @@
     margin: auto;
 }
 
-/* Styles généraux pour la page d'authentification */
 .auth-page {
     padding: 20px;
 }
 
-/* Styles pour les formulaires */
 .auth-form {
     background-color: #f8f9fa;
     padding: 20px;
@@ -26,43 +24,36 @@
     margin-bottom: 20px;
 }
 
-/* Titre des formulaires */
 .auth-form h2 {
     color: #343a40;
     margin-bottom: 20px;
     text-align: center;
 }
 
-/* Styles pour les champs de formulaire */
 .auth-form .form-group {
     margin-bottom: 15px;
 }
 
-/* Styles pour les labels */
 .auth-form label {
     font-weight: bold;
 }
 
-/* Styles pour les boutons */
 .auth-form button {
     width: 100%;
     padding: 10px;
     font-size: 16px;
 }
 
-/* Bouton de connexion */
 .auth-form button.btn-primary {
     background-color: #007bff;
     border-color: #007bff;
 }
 
-/* Bouton d'inscription */
 .auth-form button.btn-success {
     background-color: #28a745;
     border-color: #28a745;
 }
 
-/* Personnalisation des placeholders */
 .auth-form ::placeholder {
     font-style: italic;
 }

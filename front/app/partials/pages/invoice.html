@@ -1,0 +1,47 @@
+<div class="invoice-panel container mt-4" ng-controller="invoiceCtrl">
+    <h2>Générateur de Facture</h2>
+
+    <div class="mb-3">
+        <label>Nom du Client:</label>
+        <input class="form-control" ng-model="invoiceData.clientName" placeholder="Nom du client" type="text"/>
+    </div>
+
+    <h3>Articles:</h3>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Article</th>
+            <th>Quantité</th>
+            <th>Prix Unitaire</th>
+            <th>Total</th>
+            <th><i class="fa fa-cog"></i></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in invoiceData.items">
+            <td>
+                <select class="form-control" ng-change="updateItemDetails(item)"
+                        ng-model="item.productId"
+                        ng-options="product.id as product.name + ' ' +  product.description for product in products">
+                    <option value="">Sélectionner un produit</option>
+                </select>
+            </td>
+            <td><input class="form-control" min="1" ng-change="updateItemTotal(item)" ng-model="item.quantity"
+                       type="number"/></td>
+            <td>{{item.price | currency:"€"}}</td>
+            <td>{{item.total | currency:"€"}}</td>
+            <td><i class="fa fa-trash" ng-click="removeItem($index)"></i></td>
+        </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" ng-click="addInvoiceItem()"><i class="fa fa-plus"></i> Ajouter un Article</button>
+
+    <div class="mt-4">
+        <h3>Total Facture: {{calculateTotal() | currency:"€"}}</h3>
+        <h4 class="small-text"> Veuillez penser à générer la facture avant de l'imprimer ou de la télécharger.</h4>
+        <button class="btn btn-success" ng-click="generateInvoice()">Générer Facture</button>
+        <button class="btn btn-info" ng-click="printInvoice()">Imprimer / Télecharger Facture</button>
+    </div>
+
+    <div id="generated-invoice" ng-bind-html="generatedInvoiceHtml"></div>
+</div>
