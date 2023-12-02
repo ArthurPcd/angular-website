@@ -1,0 +1,55 @@
+.invoice-panel {
+    padding: 20px;
+    margin-top: 20px;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.invoice-panel h2, .invoice-panel h3 {
+    margin-bottom: 15px;
+}
+
+.invoice-panel table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.invoice-panel table, .invoice-panel th, .invoice-panel td {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align: left;
+}
+
+.invoice-panel th {
+    background-color: #f8f9fa;
+}
+
+.invoice-panel button {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.invoice-panel input, .invoice-panel select {
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.fa-plus, .fa-minus, .fa-trash {
+    cursor: pointer;
+}
+
+.small-text {
+    font-size: 12px;
+    color: #6c757d;
+}
