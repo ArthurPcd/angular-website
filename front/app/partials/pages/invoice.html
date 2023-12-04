@@ -56,8 +56,10 @@
                     </select>
                 </label>
             </td>
-            <td><input class="form-control" min="1" ng-change="updateItemTotal(item)" ng-model="item.quantity"
-                       type="number"/></td>
+            <td><label>
+                <input class="form-control" min="1" ng-change="updateItemTotal(item)" ng-model="item.quantity"
+                       type="number"/>
+            </label></td>
             <td>{{item.price | currency:"€"}}</td>
             <td>{{item.total | currency:"€"}}</td>
             <td><i class="fa fa-trash" ng-click="removeItem($index)"></i></td>
