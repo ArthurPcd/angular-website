@@ -76,7 +76,7 @@ app.controller('invoiceCtrl', function ($scope, $sce, productService, $timeout) 
         <p>TVA: ${$scope.invoiceData.companyVATNumber}</p>
         <p>Adresse de l'entreprise: ${$scope.invoiceData.companyAddress}</p>
         <p>Contact: ${$scope.invoiceData.companyContact}</p>
-        <p>Facturé à: ${$scope.invoiceData.clientName}, ${$scope.invoiceData.clientAddress}</p>
+        <p>Facturé à: ${$scope.invoiceData.clientName}</p>
         <table class="table">
             <thead>
                 <tr>
@@ -105,26 +105,70 @@ app.controller('invoiceCtrl', function ($scope, $sce, productService, $timeout) 
     $scope.printInvoice = function () {
         const today = new Date().toLocaleDateString();
         const invoiceStyles = `
-            <style>
-                table, th, td {
-                    border: 1px solid black;
-                    border-collapse: collapse;
-                }
-                th, td {
-                    padding: 5px;
-                    text-align: left;
-                }
-            </style>`;
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        .invoice-header {
+            background: #f8f9fa;
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .invoice-body {
+            padding: 15px;
+        }
+
+        .invoice-footer {
+            text-align: center;
+            padding: 10px 0;
+            border-top: 2px solid #ddd;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+            font-weight: bold;
+        }
+
+        tfoot tr td {
+            font-weight: bold;
+            background-color: #eee;
+        }
+    </style>`;
+
         const popupWin = window.open('', '_blank', 'width=800,height=600');
         popupWin.document.open();
         popupWin.document.write(`
-          <html>
-            <head>
-              <title>Facture du ${today}</title>
-              ${invoiceStyles}
-            </head>
-            <body onload="window.print();window.close()">${document.getElementById('generated-invoice').innerHTML}</body>
-          </html>`);
+      <html>
+        <head>
+          <title>Facture du ${today}</title>
+          ${invoiceStyles}
+        </head>
+        <body onload="window.print();window.close()">${document.getElementById('generated-invoice').innerHTML}</body>
+      </html>`);
         popupWin.document.close();
     };
 });
