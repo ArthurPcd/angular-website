@@ -1,9 +1,25 @@
 <div class="invoice-panel container mt-4" ng-controller="invoiceCtrl">
     <h2>Générateur de Facture</h2>
 
-    <div class="mb-3">
+    <div class="mb-3 w-50">
         <label>Nom du Client:</label>
         <input class="form-control" ng-model="invoiceData.clientName" placeholder="Nom du client" type="text"/>
+        <label>Numéro de Facture:</label>
+        <input class="form-control" ng-model="invoiceData.invoiceNumber" placeholder="Numéro de facture" type="number"/>
+        <label>Date:</label>
+        <input class="form-control" ng-model="invoiceData.invoiceDate" type="date"/>
+        <label>SIRET:</label>
+        <input class="form-control" ng-model="invoiceData.companySIRET" placeholder="Se compose de 14 chiffres"
+               type="number"/>
+        <label>Numéro de TVA:</label>
+        <input class="form-control" ng-model="invoiceData.companyVATNumber"
+               placeholder="Se compose de FR + clé de contrôle + numéro SIREN" type="text"/>
+        <label>Adresse de l'entreprise:</label>
+        <input class="form-control" ng-model="invoiceData.companyAddress" placeholder="Adresse de l'entreprise"
+               type="text"/>
+        <label>Contact de l'entreprise:</label>
+        <input class="form-control" ng-model="invoiceData.companyContact"
+               placeholder="E-mail ou numéro de téléphone de l'entreprise." type="text"/>
     </div>
 
     <h3>Articles:</h3>
@@ -39,8 +55,12 @@
     <div class="mt-4">
         <h3>Total Facture: {{calculateTotal() | currency:"€"}}</h3>
         <h4 class="small-text"> Veuillez penser à générer la facture avant de l'imprimer ou de la télécharger.</h4>
-        <button class="btn btn-success" ng-click="generateInvoice()">Générer Facture</button>
-        <button class="btn btn-info" ng-click="printInvoice()">Imprimer / Télecharger Facture</button>
+        <button class="btn btn-success" ng-class="{'vibrate-red': isPriceNaN()}" ng-click="generateInvoice()"><i
+                class="fa fa-file p-lg-1"></i> Générer
+        </button>
+        <button class="btn btn-info" ng-click="printInvoice()" ng-show="invoiceGenerated"><i
+                class="fa fa-print p-lg-1"></i> Imprimer - Télécharger
+        </button>
     </div>
 
     <div id="generated-invoice" ng-bind-html="generatedInvoiceHtml"></div>

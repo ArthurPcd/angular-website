@@ -1,18 +1,29 @@
+<body>
 <footer class="footer">
     <div class="footer-container">
-        <!-- Section Liens Utiles -->
         <div class="footer-raw">
-            <div class="col-md-3 contact contact_block">
+            <div class="col-md-3 contact contact-block">
                 <h3>Contact</h3>
                 <i class="icon fa-solid fa-phone fa-bounce"></i>
-                <p><i class="fa fa-map-marker-alt contact-icon"></i>Adresse : 123 Rue de la République, Lyon</p>
-                <p><i class="fa fa-phone contact-icon"></i>Téléphone : +1 234 567 890</p>
-                <p><i class="fa fa-envelope contact-icon"></i>Email : contact@jopak.com</p>
+                <div>
+                    <p>
+                        <i class="fa fa-phone contact-icon"></i>
+                        Téléphone :
+                        <a href="tel:0478903002">04 78 90 30 02</a>
+                    </p>
+                    <p>
+                        <i class="fa fa-envelope contact-icon"></i>
+                        E-Mail :
+                        <a href="mailto:contact@locnacelle-est.fr">contact@locnacelle-est.fr</a>
+                    </p>
+                </div>
             </div>
             <div class="col-md-3 map map-block">
-                <div class="map-dim" id="map"></div>
+                <iframe allowfullscreen=""
+                        class="map-block map-dim map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11140.145564506618!2d4.9768873!3d45.730365!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4c6979925a3bb%3A0xcec71e91c5665da1!2sLoc&#39;Nacelle%20-%20Lyon!5e0!3m2!1sfr!2sfr!4v1701638600776!5m2!1sfr!2sfr"></iframe>
             </div>
-            <div class="col-md-3 support support_block">
+            <div class="col-md-3 support support-block">
                 <h3>Support</h3>
                 <i class="icon fa-solid fa-mail-forward fa-bounce"></i>
                 <div>
@@ -29,15 +40,4 @@
         </div>
     </div>
 </footer>
-<script>
-    var map = L.map('map').setView([45.764043, 4.835659], 13); // Coordonnées de Lyon
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
-
-    var marker = L.marker([45.764043, 4.835659]).addTo(map) // Coordonnées de Lyon
-        .bindPopup('123 Rue de la République, Lyon')
-        .openPopup();
-</script>
+</body>
