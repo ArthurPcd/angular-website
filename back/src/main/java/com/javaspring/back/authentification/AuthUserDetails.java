@@ -25,11 +25,12 @@ public class AuthUserDetails implements UserDetails {
     }
 
     @Override
-        public Collection<? extends GrantedAuthority> getAuthorities() {
+    public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
     }
+
     @Override
-        public boolean isAccountNonExpired() {
+    public boolean isAccountNonExpired() {
         return true;
     }
 

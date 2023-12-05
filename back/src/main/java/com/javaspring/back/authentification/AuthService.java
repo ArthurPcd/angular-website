@@ -14,6 +14,8 @@ public class AuthService implements UserDetailsService {
     private final JwtUtil jwtUtil;
     private final BCryptPasswordEncoder passwordEncoder;
 
+    private final String EMAIL_REGEX = "^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$";
+
     public AuthService(UserService userService, JwtUtil jwtUtil, BCryptPasswordEncoder passwordEncoder) {
         this.userService = userService;
         this.jwtUtil = jwtUtil;
@@ -26,7 +28,7 @@ public class AuthService implements UserDetailsService {
         return new AuthUserDetails(user);
     }
 
-    public void register(Credentials credentials) {
+    public void register(RegisterData credentials) {
         if (userService.userExists(credentials.getEmail())) {
             throw new RuntimeException("User with this email already exists");
         }
@@ -38,6 +40,7 @@ public class AuthService implements UserDetailsService {
         User user = new User();
         user.setEmail(credentials.getEmail());
         user.setPassword(hashPassword(credentials.getPassword()));
+        user.setBirthdate(credentials.getBirthdate());
         userService.saveUser(user);
     }
 
@@ -49,11 +52,11 @@ public class AuthService implements UserDetailsService {
         return jwtUtil.generateToken(credentials.getEmail());
     }
 
-    private boolean isValidCredentials(Credentials credentials) {
+    private boolean isValidCredentials(RegisterData credentials) {
         String email = credentials.getEmail().trim();
         String password = credentials.getPassword().trim();
 
-        boolean validEmail = email.matches("^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$");
+        boolean validEmail = email.matches(EMAIL_REGEX);
         boolean validPasswordLength = password.length() >= 8;
         long specialCharactersCount = password.chars().filter(ch -> "@?:-_~&=+/*%*^\\!.,;<>\'\"()[]{}$".indexOf(ch) >= 0).count();
 

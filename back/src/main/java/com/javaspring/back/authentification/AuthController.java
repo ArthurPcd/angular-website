@@ -30,7 +30,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody Credentials credentials) {
+    public ResponseEntity<String> register(@RequestBody RegisterData credentials) {
         try {
             authService.register(credentials);
             return ResponseEntity.ok("Inscription réussie");
