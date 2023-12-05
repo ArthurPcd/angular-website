@@ -12,8 +12,7 @@ app.controller('authCtrl', function ($scope, $location, $http, $cookies) {
       .then(function (response) {
         const token = response.data;
         $cookies.put('token', token);
-        $location.path('/admin');
-        alert('Connexion réussie ! Bienvenue sur le panel d\'administration !');
+        $location.path('/profile');
       })
       .catch(function (error) {
         console.error('Error logging in:', error);
@@ -32,4 +31,8 @@ app.controller('authCtrl', function ($scope, $location, $http, $cookies) {
     console.log('Inscription:', $scope.register);
     alert('Inscription réussie pour ' + firstNameCapitalized + ' ' + lastNameCapitalized);
   };
+
+  $scope.getAuthorizedHeader = function () {
+          return { 'Authorization': 'Bearer ' + $cookies.get('token') };
+      };
 });

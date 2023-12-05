@@ -1,8 +1,9 @@
 package com.javaspring.back.authentification;
 
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.stereotype.Component;
+
+import static io.jsonwebtoken.SignatureAlgorithm.HS256;
 
 @Component
 public class JwtUtil {
@@ -12,7 +13,7 @@ public class JwtUtil {
     public static String generateToken(String subject) {
         return Jwts.builder()
                 .setSubject(subject)
-                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
+                .signWith(HS256, SECRET_KEY)
                 .compact();
     }
 
